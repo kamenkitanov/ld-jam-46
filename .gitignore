@@ -2,3 +2,6 @@ ld-jam-46.sln
 Temp/
 Logs/
 Library/
+Output/
+obj/
+Assembly-CSharp.csproj
