@@ -18,6 +18,8 @@ public class Bot : MonoBehaviour
 
     float StartSpottedTime = 0;
 
+    Vector3 LastKnownPlayerPosition;
+
     public enum State
     {
         Idle,
@@ -33,10 +35,11 @@ public class Bot : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if ( HasLineOfSightToPlayer())
         {
+            LastKnownPlayerPosition = Player.transform.position;
             SightPoly.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 1);
         } 
         else
@@ -48,7 +51,7 @@ public class Bot : MonoBehaviour
         {
             // Go between points, looking for player
             case State.Idle:
-                transform.position = Vector3.MoveTowards(transform.position, GetTargetPoint(), Speed * Time.deltaTime);
+                transform.position = Vector3.MoveTowards(transform.position, GetTargetPoint(), Speed * Time.fixedDeltaTime);
 
                 if (Vector3.Distance(transform.position, GetTargetPoint()) < Vector3.kEpsilon)
                 {
@@ -75,7 +78,8 @@ public class Bot : MonoBehaviour
                 break;
             // Try to get close to the player and kill him
             case State.Chase:
-                transform.position = Vector3.MoveTowards(transform.position, Player.transform.position, 6 * Speed * Time.deltaTime);
+                transform.position = Vector3.MoveTowards(transform.position, LastKnownPlayerPosition, 6 * Speed * Time.fixedDeltaTime);
+
                 break;
         }
 
