@@ -81,12 +81,14 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: -1, y: -1}
-      - {x: -1, y: 1}
+      - {x: 7.8410177, y: 2.488515}
       - {x: 1.7354193, y: 7.9824076}
+      - {x: 13.174062, y: 11.860894}
       - {x: 15.457061, y: 4.4250097}
-      - {x: 3.5613623, y: -5.2091417}
-      - {x: -0.77835166, y: -1.2045331}
-      - {x: -0.9418849, y: -1.0536276}
+      - {x: 15.887639, y: -8.015146}
+      - {x: 5.4871283, y: -9.499565}
+      - {x: -0.6847737, y: -1.4130158}
+      - {x: -0.9173492, y: -1.1082907}
       - {x: -1, y: -1}
 --- !u!1971053207 &5205091887474836546
 SpriteShapeRenderer:
@@ -159,7 +161,7 @@ MonoBehaviour:
       bevelSize: 0
       spriteIndex: 0
       corner: 1
-    - position: {x: -1, y: 1, z: 0}
+    - position: {x: 7.8410177, y: 2.488515, z: 0}
       leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: 0, y: 0, z: 0}
       mode: 0
@@ -177,6 +179,15 @@ MonoBehaviour:
       bevelSize: 0
       spriteIndex: 0
       corner: 1
+    - position: {x: 13.174062, y: 11.860894, z: 0}
+      leftTangent: {x: 0, y: 0, z: 0}
+      rightTangent: {x: 0, y: 0, z: 0}
+      mode: 0
+      height: 1
+      bevelCutoff: 0
+      bevelSize: 0
+      spriteIndex: 0
+      corner: 1
     - position: {x: 15.457061, y: 4.4250097, z: 0}
       leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: 0, y: 0, z: 0}
@@ -186,7 +197,16 @@ MonoBehaviour:
       bevelSize: 0
       spriteIndex: 0
       corner: 1
-    - position: {x: 3.5613623, y: -5.2091417, z: 0}
+    - position: {x: 15.887639, y: -8.015146, z: 0}
+      leftTangent: {x: 0, y: 0, z: 0}
+      rightTangent: {x: 0, y: 0, z: 0}
+      mode: 0
+      height: 1
+      bevelCutoff: 0
+      bevelSize: 0
+      spriteIndex: 0
+      corner: 1
+    - position: {x: 5.4871283, y: -9.499565, z: 0}
       leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: 0, y: 0, z: 0}
       mode: 0
