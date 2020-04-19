@@ -885,6 +885,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5087528998707190214, guid: f2908909141d40647a7f6d776d172f3e,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -5087528998707190214, guid: f2908909141d40647a7f6d776d172f3e,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5117770229236581737, guid: f2908909141d40647a7f6d776d172f3e,
+        type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5117770229236581737, guid: f2908909141d40647a7f6d776d172f3e,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5117770229236581737, guid: f2908909141d40647a7f6d776d172f3e,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7868932265584602898, guid: f2908909141d40647a7f6d776d172f3e,
+        type: 3}
+      propertyPath: ExternalForceDamp
+      value: 0.97
+      objectReference: {fileID: 0}
     - target: {fileID: 7868932265584602899, guid: f2908909141d40647a7f6d776d172f3e,
         type: 3}
       propertyPath: m_Name
@@ -958,6 +988,10 @@ PrefabInstance:
       propertyPath: PlayerObject
       value: 
       objectReference: {fileID: 1114685610}
+    - target: {fileID: 519420030, guid: 098f1d1866bb0264eaa0f7693aee6b66, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8403852669414579007, guid: 098f1d1866bb0264eaa0f7693aee6b66,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1027,6 +1061,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 384243547, guid: 9c9e458353265f84c88966c750e49859, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 384243547, guid: 9c9e458353265f84c88966c750e49859, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8658879334757746840, guid: 9c9e458353265f84c88966c750e49859,
         type: 3}
       propertyPath: m_LocalPosition.x
