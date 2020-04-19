@@ -9,7 +9,7 @@ public class Bot : MonoBehaviour
     public float Speed = 1.0f;
     public State CurrentState = State.Idle;
 
-    public float SightRadius = 1.0f;
+    public float SightRadius = 2.0f;
 
     public GameObject Player;
 

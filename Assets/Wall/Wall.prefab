@@ -28,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 382980706130834246}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.54, y: 0.53, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 5.332, y: 1.34, z: 0}
+  m_LocalScale: {x: 0.788, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -135,8 +135,8 @@ SpriteShapeRenderer:
   m_ShapeTexture: {fileID: 2800000, guid: 593db31ccf0873f4a8be41d1afa37d1f, type: 3}
   m_Sprites: []
   m_LocalAABB:
-    m_Center: {x: 7.228531, y: 1.3866329, z: 0}
-    m_Extent: {x: 8.228531, y: 6.5957747, z: 0}
+    m_Center: {x: 7.44382, y: 1.180665, z: 0}
+    m_Extent: {x: 8.44382, y: 10.68023, z: 0}
 --- !u!114 &209234159669967366
 MonoBehaviour:
   m_ObjectHideFlags: 0
