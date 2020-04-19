@@ -193,6 +193,8 @@ MonoBehaviour:
   Speed: 10
   DmgEffect: {fileID: 7868932265584602899, guid: 38b142543c11d1649b96dae292ec837a,
     type: 3}
+  ExternalVeloctiy: {x: 0, y: 0}
+  ExternalForceDamp: 1
 --- !u!61 &-5087528998707190214
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -217,7 +219,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.5, y: 0.5}
   m_EdgeRadius: 0
 --- !u!50 &5117770229236581737
 Rigidbody2D:
