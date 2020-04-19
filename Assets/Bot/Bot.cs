@@ -17,6 +17,8 @@ public class Bot : MonoBehaviour
     public GameObject SightPoly;
 
     float StartSpottedTime = 0;
+    float LastSeenPlayerTime = 0;
+    float StartAlertedTime = 0;
 
     Vector3 LastKnownPlayerPosition;
 
@@ -39,6 +41,7 @@ public class Bot : MonoBehaviour
     {
         if ( HasLineOfSightToPlayer())
         {
+            LastSeenPlayerTime = Time.time;
             LastKnownPlayerPosition = Player.transform.position;
             SightPoly.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 1);
         } 
@@ -71,15 +74,39 @@ public class Bot : MonoBehaviour
             // Player is in range, prepare to chase
             case State.Spotted:
                 ExclamationObject.SetActive(true);
-                if (Time.time - StartSpottedTime > 3)
+                if (Time.time - StartSpottedTime > 1.5f)
                 {
                     CurrentState = State.Chase;
                 }
                 break;
             // Try to get close to the player and kill him
             case State.Chase:
-                transform.position = Vector3.MoveTowards(transform.position, LastKnownPlayerPosition, 6 * Speed * Time.fixedDeltaTime);
+                transform.position = Vector3.MoveTowards(transform.position, LastKnownPlayerPosition, 10 * Speed * Time.fixedDeltaTime);
 
+                if (Vector3.Distance(transform.position, LastKnownPlayerPosition) < Vector3.kEpsilon)
+                {
+                    if (Time.time - LastSeenPlayerTime > 3)
+                    {
+                        ExclamationObject.SetActive(false);
+                        CurrentState = State.Idle;
+                    }
+                }
+
+                if (GetComponent<Collider2D>().IsTouching(Player.GetComponent<Collider2D>())){
+                    Vector2 dir = Player.transform.position - transform.position;
+                    //Player.GetComponent<Rigidbody2D>().AddForce(dir.normalized * 10);
+                    //Player.GetComponent<PlayerController>().ExternalVeloctiy = dir.normalized * 10;
+                    Player.GetComponent<PlayerController>().Health--;
+                    CurrentState = State.Alerted;
+                    StartAlertedTime = Time.time;
+                }
+
+                break;
+            case State.Alerted:
+                if ( Time.time - StartAlertedTime > 0.3f)
+                {
+                    CurrentState = State.Chase;
+                }
                 break;
         }
 
