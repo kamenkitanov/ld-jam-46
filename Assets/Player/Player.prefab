@@ -195,6 +195,39 @@ MonoBehaviour:
     type: 3}
   ExternalVeloctiy: {x: 0, y: 0}
   ExternalForceDamp: 1
+  BreathCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1.0022583
+      inSlope: 1.056206
+      outSlope: 1.056206
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.46493754
+      value: 1.4933281
+      inSlope: 0.06710249
+      outSlope: 0.06710249
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: -0.922001
+      outSlope: -0.922001
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!61 &-5087528998707190214
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -99,6 +99,7 @@ public class Bot : MonoBehaviour
                     Player.GetComponent<PlayerController>().Health--;
                     CurrentState = State.Alerted;
                     StartAlertedTime = Time.time;
+                    Camera.main.GetComponent<FollowPlayer>().Shake();
                 }
 
                 break;

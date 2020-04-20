@@ -415,7 +415,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: You are dead.
+  m_Text: You are dead<color='#E75858'>.</color>
 --- !u!222 &1481547865
 CanvasRenderer:
   m_ObjectHideFlags: 0

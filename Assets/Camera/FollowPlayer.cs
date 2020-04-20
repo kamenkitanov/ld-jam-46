@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FollowPlayer : MonoBehaviour
 {
+    Vector3 ShakeOffset;
     public GameObject PlayerObject;
     // Start is called before the first frame update
     void Start()
@@ -15,6 +16,22 @@ public class FollowPlayer : MonoBehaviour
     void Update()
     {
         Vector3 pp = PlayerObject.transform.position;
-        transform.position = new Vector3(pp.x, pp.y, transform.position.z);
+        transform.position = new Vector3(pp.x, pp.y, transform.position.z) + ShakeOffset;
+    }
+
+    public void Shake()
+    {
+        StartCoroutine("DoShake");
+    }
+
+    IEnumerator DoShake()
+    {
+        for(int i = 0; i < 5; i++)
+        {
+            ShakeOffset = Random.insideUnitSphere*0.4f;
+            ShakeOffset.z = 0;
+
+            yield return new WaitForSeconds(0.1f);
+        }
     }
 }

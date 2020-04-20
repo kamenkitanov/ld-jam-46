@@ -13,6 +13,10 @@ public class PlayerController : MonoBehaviour
 
     public Vector2 ExternalVeloctiy;
     public float ExternalForceDamp = 1;
+
+    public AnimationCurve BreathCurve;
+
+    float LastTakenDmgTime = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +33,8 @@ public class PlayerController : MonoBehaviour
 
         GetComponent<Rigidbody2D>().velocity = (vel * Speed) + ExternalVeloctiy;
         ExternalVeloctiy *= ExternalForceDamp;
+
+        transform.localScale = Vector3.one * BreathCurve.Evaluate(Time.time % 1) * Mathf.Min(1, (12 + (float)Health) / 17.0f);
     }
 
     public int Health
@@ -41,20 +47,27 @@ public class PlayerController : MonoBehaviour
         {
             if (value >= 0)
             {
-                transform.localScale = Vector3.one * Mathf.Min(1, (12 + (float)value) / 17.0f);
 
                 if ( value < _health)
                 {
-                    // We are taking dmg
-                    for (int i = 0; i < 5; i++)
+                    if ( Time.time - LastTakenDmgTime > 0.5f)
                     {
-                        Vector3 rand = Random.insideUnitCircle;
-                        GameObject.Instantiate(DmgEffect, transform.position, Quaternion.identity);
+                        LastTakenDmgTime = Time.time;
+
+                        // We are taking dmg
+                        for (int i = 0; i < 5; i++)
+                        {
+                            Vector3 rand = Random.insideUnitCircle;
+                            GameObject.Instantiate(DmgEffect, transform.position, Quaternion.identity);
+                        }
+
+                        _health = value;
                     }
-
                 }
-                _health = value;
-
+                else
+                {
+                    _health = value;
+                }
             }
             else
             {
