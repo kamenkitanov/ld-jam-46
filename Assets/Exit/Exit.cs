@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class Exit : MonoBehaviour
 {
     public string ExitToLevel;
+
+    public static string LastLevelName = "Level0";
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +26,7 @@ public class Exit : MonoBehaviour
         {
             if ( ExitToLevel != "")
             {
+                LastLevelName = ExitToLevel;
                 SceneManager.LoadScene(ExitToLevel);
             }
         }
