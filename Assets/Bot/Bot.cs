@@ -81,7 +81,7 @@ public class Bot : MonoBehaviour
                 break;
             // Try to get close to the player and kill him
             case State.Chase:
-                transform.position = Vector3.MoveTowards(transform.position, LastKnownPlayerPosition, 10 * Speed * Time.fixedDeltaTime);
+                transform.position = Vector3.MoveTowards(transform.position, LastKnownPlayerPosition, 8 * Speed * Time.fixedDeltaTime);
 
                 if (Vector3.Distance(transform.position, LastKnownPlayerPosition) < Vector3.kEpsilon)
                 {

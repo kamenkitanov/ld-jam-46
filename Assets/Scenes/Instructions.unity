@@ -800,7 +800,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'This is a simple game, just follow the rulles!
+  m_Text: 'This is a simple game, just follow the rules!
 
 '
 --- !u!222 &1181829369

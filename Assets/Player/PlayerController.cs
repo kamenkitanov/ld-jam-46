@@ -52,6 +52,7 @@ public class PlayerController : MonoBehaviour
                 {
                     if ( Time.time - LastTakenDmgTime > 0.5f)
                     {
+                        GetComponent<AudioSource>().Play();
                         LastTakenDmgTime = Time.time;
 
                         // We are taking dmg

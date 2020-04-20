@@ -15,11 +15,14 @@ public class QuitGame : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (QuitOnEscape)
             {
-                DoQuit();
+                if (Application.platform != RuntimePlatform.WebGLPlayer)
+                {
+                    DoQuit();
+                }
             }
             else
             {

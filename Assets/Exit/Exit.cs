@@ -20,14 +20,20 @@ public class Exit : MonoBehaviour
 
     }
 
+    void DoExit()
+    {
+        LastLevelName = ExitToLevel;
+        SceneManager.LoadScene(ExitToLevel);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if ( collision.tag == "Player")
         {
             if ( ExitToLevel != "")
             {
-                LastLevelName = ExitToLevel;
-                SceneManager.LoadScene(ExitToLevel);
+                GetComponent<AudioSource>().Play();
+                Invoke("DoExit", 0.75f);
             }
         }
 

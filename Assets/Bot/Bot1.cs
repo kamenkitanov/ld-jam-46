@@ -48,6 +48,7 @@ public class Bot1 : MonoBehaviour
                 {
                     CurrentState = State.Fire;
                     StartFiringTime = Time.time;
+                    GetComponent<AudioSource>().Play();
                 }
                 break;
             case State.Fire:
